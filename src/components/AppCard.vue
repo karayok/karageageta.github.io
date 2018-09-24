@@ -17,6 +17,7 @@
       <img :src="image" />
       <div class="card-footer">
         <div class="title">{{ name }}</div>
+        <div class="description">{{ description }}</div>
         <vs-row
           class="app-type-icons"
           vs-align="flex-end"
@@ -48,6 +49,11 @@ export default {
       type: String,
       required: true
     },
+    description: {
+      type: String,
+      required: false,
+      default: ''
+    },
     image: {
       type: String,
       required: false
@@ -76,15 +82,17 @@ export default {
   methods: {
     showDescription () {
       const footer = event.currentTarget.querySelector('.card-footer')
-      footer.style.height = '50%'
-      footer.style.maxHeight = '50%'
-      footer.style.transition = 'max-height 0.25s ease-in'
+      footer.classList.remove('ease-out')
+      footer.classList.add('ease-in')
+      const description = footer.querySelector('.description')
+      description.classList.add('ease-in')
     },
     disableDescription () {
       const footer = event.currentTarget.querySelector('.card-footer')
-      footer.style.height = '20%'
-      footer.style.maxHeight = '20%'
-      footer.style.transition = '0.25s ease-in'
+      footer.classList.remove('ease-in')
+      footer.classList.add('ease-out')
+      const description = footer.querySelector('.description')
+      description.classList.remove('ease-in')
     }
   }
 }
@@ -96,12 +104,14 @@ export default {
     min-width: 176px;
     position: relative;
     border-radius: 8px;
-    background: rgba(14, 70, 90, 0.9);
+    background: $primaryColor;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
     &:hover {
-      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+      -webkit-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+      -moz-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
     }
 
     &::before {
@@ -111,7 +121,7 @@ export default {
     }
 
     a {
-      color: rgb(38, 50, 56);
+      color: $primaryTextColor;
     }
 
     .card-container {
@@ -133,13 +143,53 @@ export default {
 
       .card-footer {
         padding: 4px;
-        background: rgba(255, 255, 255, 0.9);
+        background: linear-gradient(315deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.9) 100%);
         position: absolute;
         bottom: 0;
         width: 100%;
         height: 20%;
         max-height: 20%;
         min-height: 48px;
+        border-radius: 0 0 8px 8px;
+
+        &.ease-in {
+          height: 50%;
+          max-height: 50%;
+          transition: max-height 0.2s ease-in;
+        }
+
+        &.ease-out {
+          height: 20%;
+          max-height: 20%;
+          transition: 0.2s ease-in;
+        }
+
+        .title {
+          font-weight: bold;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .description {
+          margin-top: 8px;
+          color: $secondaryTextColor;
+          display: none;
+
+          @keyframes show {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          &.ease-in {
+            display: block;
+            animation: show 0.35s ease-in 0s;
+          }
+        }
 
         .app-type-icons {
           position: absolute;

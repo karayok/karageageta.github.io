@@ -47,7 +47,7 @@
   html {
     font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
-    color: rgb(38, 50, 56);
+    color: $primaryTextColor;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -62,7 +62,7 @@
   }
 
   header {
-    background: rgb(7, 33, 42);
+    background: $white;
     background: linear-gradient(315deg, rgba(7, 33, 42, 0.9) 0%, rgba(14, 70, 90, 0.9) 100%);
     width: 100%;
     height: 40vw;
@@ -81,7 +81,7 @@
     }
 
     a {
-      color: #fff;
+      color: $white;
       font-weight: bold;
     }
 
@@ -90,12 +90,12 @@
       min-width: 120px;
       max-width: 152px;
       border-radius: 50%;
-      border: solid 8px #fff;
+      border: solid 8px $white;
       margin-top: 32px;
     }
 
     #title {
-      color: #fff;
+      color: $white;
       font-size: 48px;
       margin-top: 24px;
 

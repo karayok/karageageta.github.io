@@ -13,8 +13,10 @@
     "precommit": "yarn lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "nuxt": "^1.0.0",
-    "vuesax": "^3.2.27"
+    "vuesax": "^3.2.27",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -28,6 +30,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^4.0.0",
     "node-sass": "^4.9.3",
+    "nuxt-sass-resources-loader": "^2.0.5",
     "sass-loader": "^7.1.0",
     "webpack-dev-server": "^3.0.0"
   }
