@@ -20,13 +20,14 @@
           vs-justify="space-between"
           vs-w="12"
         >
-          <app-card
+          <card
             v-for="item in appList"
             :key="item.name"
             :name="item.name"
+            :url="item.url"
+            :isApp="true"
             :description="item.description"
             :image="item.image"
-            :url="item.url"
             :isAndroid="item.is_android"
             :isIos="item.is_ios"
           />
@@ -71,10 +72,11 @@
           vs-justify="space-between"
           vs-w="12"
         >
-          <app-card
+          <card
             v-for="item in feeds"
             :key="item.title[0]"
             :name="item.title[0]"
+            :isApp="false"
             :url="item.link[0].$.href"
             :image="item.link[1].$.href"
           />
@@ -87,12 +89,12 @@
 <script>
 import axios from 'axios'
 import xml2js from 'xml2js'
-import AppCard from '~/components/AppCard.vue'
+import Card from '~/components/Card.vue'
 import AppList from '~/static/data/appList.json'
 
 export default {
   components: {
-    AppCard
+    Card
   },
   data () {
     axios.get('https://karage-ageta.hatenablog.com/feed')
