@@ -118,7 +118,7 @@ export default {
 
 <style lang="scss">
   .heading {
-    padding: 4px 0;
-    border-bottom: $primaryTextColor 1px solid;
+    padding: $spacing-xxx-small 0;
+    border-bottom: $primary-text-color 1px solid;
   }
 </style>

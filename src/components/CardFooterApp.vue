@@ -58,7 +58,7 @@ export default {
 
 <style lang="scss" scoped>
   .card-footer-app {
-    padding: 8px;
+    padding: $spacing-xx-small;
     background: linear-gradient(315deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.9) 100%);
     position: absolute;
     bottom: 0;
@@ -88,8 +88,8 @@ export default {
     }
 
     .description {
-      margin-top: 8px;
-      color: $secondaryTextColor;
+      margin-top: $spacing-xx-small;
+      color: $secondary-text-color;
       display: none;
 
       @keyframes show {

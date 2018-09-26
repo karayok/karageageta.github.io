@@ -114,11 +114,11 @@ export default {
 
 <style lang="scss" scoped>
   .card {
-    margin: 24px;
+    margin: $spacing-small;
     min-width: 176px;
     position: relative;
     border-radius: 8px;
-    background: $primaryColor;
+    background: $light-background;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
@@ -136,7 +136,7 @@ export default {
     }
 
     a {
-      color: $primaryTextColor;
+      color: $primary-text-color;
     }
 
     .card-container {

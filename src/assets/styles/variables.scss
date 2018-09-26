@@ -1,13 +1,26 @@
 /**
  * Text Color
  */
-$primaryTextColor: rgba(38, 50, 56, 1);
-$secondaryTextColor: rgba(38, 50, 56, 0.8);
+$primary-text-color: rgba(38, 50, 56, 1);
+$secondary-text-color: rgba(38, 50, 56, 0.8);
 $disabled: rgba(207, 216, 220, 1);
-$white: rgba(256, 256, 256, 1);
+$light-background: rgba(256, 256, 256, 1);
 
 /**
  * Theme Colors
  */
-$primaryColor: rgba(66, 170, 199, 1);
-$accentColor: rgba(246, 166, 35, 1);
+$primary-color: rgba(66, 170, 199, 1);
+$accent-color: rgba(246, 166, 35, 1);
+
+/**
+ * Spacing ( Margin & Padding)
+ */
+$spacing-xxx-small: 4px;
+$spacing-xx-small: 8px;
+$spacing-x-small: 16px;
+$spacing-small: 24px;
+$spacing-medium: 32px;
+$spacing-large: 40px;
+$spacing-x-large: 48px;
+$spacing-xx-large: 56px;
+$spacing-xxx-large: 64px;

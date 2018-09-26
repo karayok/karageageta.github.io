@@ -47,7 +47,7 @@
   html {
     font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
-    color: $primaryTextColor;
+    color: $primary-text-color;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -62,7 +62,7 @@
   }
 
   header {
-    background: $white;
+    background: $light-background;
     background: linear-gradient(315deg, rgba(7, 33, 42, 0.9) 0%, rgba(14, 70, 90, 0.9) 100%);
     width: 100%;
     height: 40vw;
@@ -71,7 +71,7 @@
     position: relative;
 
     nav {
-      margin-top: 24px;
+      margin-top: $spacing-small;
 
       img {
         width: 4vw;
@@ -81,7 +81,7 @@
     }
 
     a {
-      color: $white;
+      color: $light-background;
       font-weight: bold;
     }
 
@@ -90,14 +90,14 @@
       min-width: 120px;
       max-width: 152px;
       border-radius: 50%;
-      border: solid 8px $white;
-      margin-top: 32px;
+      border: solid 8px $light-background;
+      margin-top: $spacing-medium;
     }
 
     #title {
-      color: $white;
+      color: $light-background;
       font-size: 48px;
-      margin-top: 24px;
+      margin-top: $spacing-small;
 
       img {
         width: 48vw;
@@ -113,6 +113,6 @@
   }
 
   section {
-    margin: 24px auto;
+    margin: $spacing-small auto;
   }
 </style>
