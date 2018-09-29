@@ -1,0 +1,10 @@
+@font-face {
+  font-family: '#{$heading-font-family}';
+  src:  url('/fonts/#{$heading-font-family}.eot?2cvp3w');
+  src:  url('/fonts/#{$heading-font-family}.eot?2cvp3w#iefix') format('embedded-opentype'),
+  url('/fonts/#{$heading-font-family}.ttf?2cvp3w') format('truetype'),
+  url('/fonts/#{$heading-font-family}.woff?2cvp3w') format('woff'),
+  url('/fonts/#{$heading-font-family}.svg?2cvp3w##{$heading-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

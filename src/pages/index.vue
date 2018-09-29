@@ -41,7 +41,6 @@
       vs-w="12"
     >
       <vs-col
-        class="heading"
         vs-type="flex"
         vs-justify="flex-start"
         vs-align="flex-start"
@@ -49,7 +48,7 @@
         vs-sm="11"
         vs-xs="11"
       >
-        <h2>ARTICLES</h2>
+        <h2 class="heading">ARTICLES</h2>
       </vs-col>
     </vs-row>
     <vs-row
@@ -118,7 +117,10 @@ export default {
 
 <style lang="scss">
   .heading {
+    font-family: $heading-font-family !important;
+    font-weight: normal;
     padding: $spacing-xxx-small 0;
+    letter-spacing: $spacing-xxx-small;
     border-bottom: $primary-text-color 1px solid;
   }
 </style>

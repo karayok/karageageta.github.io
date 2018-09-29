@@ -1,6 +1,12 @@
 module.exports = {
   modules: [
-    ['nuxt-sass-resources-loader', './assets/styles/variables.scss']
+    [
+      'nuxt-sass-resources-loader',
+      [
+        './assets/styles/variables.scss',
+        './assets/styles/default.scss'
+      ]
+    ]
   ],
   /*
   ** Headers of the page
