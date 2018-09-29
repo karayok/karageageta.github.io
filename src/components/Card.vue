@@ -1,11 +1,5 @@
 <template>
-  <vs-col
-    class="card"
-    vs-type="flex"
-    vs-justify="center"
-    vs-align="center"
-    vs-w="3"
-  >
+  <div class="card">
     <a
       class="card-container"
       :href="url"
@@ -29,7 +23,7 @@
         :name="name"
       />
     </a>
-  </vs-col>
+  </div>
 </template>
 
 <script>

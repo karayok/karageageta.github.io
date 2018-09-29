@@ -2,20 +2,10 @@
   <div>
     <div class="title">{{ name }}</div>
     <div class="description">{{ description }}</div>
-    <vs-row
-      class="app-type-icons"
-      vs-align="flex-end"
-      vs-type="flex"
-      vs-justify="flex-end"
-      vs-w="8"
-    >
-      <vs-col v-if="isAndroid" vs-w="2">
-        <img src="~/static/images/icons/ic_android.svg" />
-      </vs-col>
-      <vs-col v-if="isIos" vs-w="2">
-        <img src="~/static/images/icons/ic_ios.svg" />
-      </vs-col>
-    </vs-row>
+    <div class="app-type-icons">
+      <img v-if="isAndroid" src="~/static/images/icons/ic_android.svg" />
+      <img v-if="isIos" src="~/static/images/icons/ic_ios.svg" />
+    </div>
   </div>
 </template>
 

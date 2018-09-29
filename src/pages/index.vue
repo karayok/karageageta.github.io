@@ -1,87 +1,25 @@
 <template>
   <section class="main">
-    <vs-row
-      vs-align="center"
-      vs-type="flex"
-      vs-justify="center"
-      vs-w="12"
-    >
-      <vs-col
-        vs-type="flex"
-        vs-justify="center"
-        vs-align="center"
-        vs-lg="8"
-        vs-sm="11"
-        vs-xs="11"
-      >
-        <vs-row
-          vs-align="center"
-          vs-type="flex"
-          vs-justify="space-between"
-          vs-w="12"
-        >
-          <card
-            v-for="item in appList"
-            :key="item.name"
-            :name="item.name"
-            :url="item.url"
-            :isApp="true"
-            :description="item.description"
-            :image="item.image"
-            :isAndroid="item.is_android"
-            :isIos="item.is_ios"
-          />
-        </vs-row>
-      </vs-col>
-    </vs-row>
-    <vs-row
-      vs-align="flex-end"
-      vs-type="flex"
-      vs-justify="flex-end"
-      vs-w="12"
-    >
-      <vs-col
-        vs-type="flex"
-        vs-justify="flex-start"
-        vs-align="flex-start"
-        vs-lg="10"
-        vs-sm="11"
-        vs-xs="11"
-      >
-        <h2 class="heading">ARTICLES</h2>
-      </vs-col>
-    </vs-row>
-    <vs-row
-      vs-align="center"
-      vs-type="flex"
-      vs-justify="center"
-      vs-w="12"
-    >
-      <vs-col
-        vs-type="flex"
-        vs-justify="center"
-        vs-align="center"
-        vs-lg="8"
-        vs-sm="11"
-        vs-xs="11"
-      >
-        <vs-row
-          vs-align="center"
-          vs-type="flex"
-          vs-justify="space-between"
-          vs-w="12"
-        >
-          <card
-            v-for="item in feeds"
-            :key="item.title[0]"
-            :name="item.title[0]"
-            :isApp="false"
-            :url="item.link[0].$.href"
-            :image="item.link[1].$.href"
-          />
-        </vs-row>
-      </vs-col>
-    </vs-row>
+    <card
+      v-for="item in appList"
+      :key="item.name"
+      :name="item.name"
+      :url="item.url"
+      :isApp="true"
+      :description="item.description"
+      :image="item.image"
+      :isAndroid="item.is_android"
+      :isIos="item.is_ios"
+    />
+    <h2 class="heading">ARTICLES</h2>
+    <card
+      v-for="item in feeds"
+      :key="item.title[0]"
+      :name="item.title[0]"
+      :isApp="false"
+      :url="item.link[0].$.href"
+      :image="item.link[1].$.href"
+    />
   </section>
 </template>
 
