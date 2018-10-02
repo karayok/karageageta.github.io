@@ -1,7 +1,7 @@
 <template>
-  <div class="card">
+  <div class="card elevation-1">
     <a
-      class="card-container"
+      class="card-content"
       :href="url"
       target="_blank"
       rel="noopener"
@@ -108,14 +108,13 @@ export default {
 
 <style lang="scss" scoped>
   .card {
-    margin: $spacing-small;
-    min-width: 176px;
+    min-width: 130px;
     position: relative;
     border-radius: 8px;
     background: $light-background;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
+    // TODO : fix
     &:hover {
       top: -8px;
       box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
@@ -133,7 +132,7 @@ export default {
       color: $primary-text-color;
     }
 
-    .card-container {
+    .card-content {
       position: absolute;
       top: 0;
       width: 100%;

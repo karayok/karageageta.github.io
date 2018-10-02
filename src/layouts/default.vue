@@ -1,46 +1,36 @@
 <template>
-  <div>
-    <div class="main">
-      <header>
-        <vs-row vs-align="center" vs-type="flex" vs-justify="space-around" vs-w="12">
-          <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="2">
-            <img src="~/static/images/icons/icon.png" alt="" class="icon">
-          </vs-col>
-        </vs-row>
-        <vs-row id="title" vs-align="center" vs-type="flex" vs-justify="space-around" vs-w="12">
-          <img src="~/static/images/title.svg" alt="YOKO KARASAKI"/>
-        </vs-row>
-        <nav>
-          <vs-row vs-align="center" vs-type="flex" vs-justify="space-around" vs-w="12">
-            <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-lg="3" vs-sm="4" vs-xs="5">
-              <vs-row vs-align="center" vs-type="flex" vs-justify="space-around" vs-w="12">
-                <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="1">
-                  <a href="https://github.com/KarageAgeta" target="_blank" rel="noopener">
-                    <img src="~/static/images/icons/ic_github_outline.svg" alt="GitHub"/>
-                  </a>
-                </vs-col>
-                <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="1">
-                  <a href="http://karage-ageta.hatenablog.com/" target="_blank" rel="noopener">
-                    <img src="~/static/images/icons/ic_pencil_outline.svg" alt="Blog"/>
-                  </a>
-                </vs-col>
-                <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="1">
-                  <a href="https://twitter.com/KarageAgeta" target="_blank" rel="noopener">
-                    <img src="~/static/images/icons/ic_twitter_outline.svg" alt="Twitter"/>
-                  </a>
-                </vs-col>
-              </vs-row>
-            </vs-col>
-          </vs-row>
-        </nav>
-      </header>
-      <section>
-        <nuxt/>
-      </section>
-    </div>
+  <section>
+    <header class="elevation-2">
+      <img src="~/static/images/icons/icon.png" alt="" class="icon">
+      <div id="title">
+        <img src="~/static/images/title.svg" alt="YOKO KARASAKI"/>
+      </div>
+      <nav>
+        <ul>
+          <li class="github">
+            <a href="https://github.com/KarageAgeta" target="_blank" rel="noopener">
+              <img src="~/static/images/icons/ic_github_outline.svg" alt="GitHub"/>
+            </a>
+          </li>
+          <li class="blog">
+            <a href="http://karage-ageta.hatenablog.com/" target="_blank" rel="noopener">
+              <img src="~/static/images/icons/ic_pencil_outline.svg" alt="Blog"/>
+            </a>
+          </li>
+          <li class="twitter">
+            <a href="https://twitter.com/KarageAgeta" target="_blank" rel="noopener">
+              <img src="~/static/images/icons/ic_twitter_outline.svg" alt="Twitter"/>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <nuxt/>
+    </main>
     <footer>
     </footer>
-  </div>
+  </section>
 </template>
 
 <style lang="scss">
@@ -62,42 +52,72 @@
   }
 
   header {
+    padding-bottom: $spacing-small;
     background: $light-background;
     background: linear-gradient(315deg, rgba(7, 33, 42, 0.9) 0%, rgba(14, 70, 90, 0.9) 100%);
     width: 100%;
-    height: 40vw;
-    min-height: 288px;
-    max-height: 344px;
     position: relative;
-
-    nav {
-      margin-top: $spacing-small;
-
-      img {
-        width: 4vw;
-        min-width: 32px;
-        max-width: 40px;
-      }
-    }
+    top: 0;
+    text-align: center;
 
     a {
       color: $light-background;
       font-weight: bold;
     }
 
+    nav {
+      margin-top: $spacing-x-small;
+
+      ul {
+        margin: unset;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "github blog twitter";
+
+        li {
+          display: inline;
+
+          &.github {
+            grid-area: github;
+          }
+
+          &.blog {
+            grid-area: blog;
+          }
+
+          &.twitter {
+            grid-area: twitter;
+          }
+
+          img {
+            width: 4vw;
+            min-width: 32px;
+            max-width: 40px;
+          }
+        }
+      }
+
+      @media (min-width: 768px) {
+        ul {
+          grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+          grid-template-areas: ". github blog twitter .";
+        }
+      }
+    }
+
     .icon {
       width: 32vw;
       min-width: 120px;
-      max-width: 152px;
+      max-width: 200px;
       border-radius: 50%;
       border: solid 8px $light-background;
-      margin-top: $spacing-medium;
+      margin-top: $spacing-small;
     }
 
     #title {
       color: $light-background;
       font-size: 48px;
-      margin-top: $spacing-small;
+      margin-top: $spacing-x-small;
 
       img {
         width: 48vw;
@@ -105,14 +125,5 @@
         max-width: 480px;
       }
     }
-  }
-
-  .main {
-    width: 100%;
-    min-height: calc(100vh - 60px);
-  }
-
-  section {
-    margin: $spacing-small auto;
   }
 </style>

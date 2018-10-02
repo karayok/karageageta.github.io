@@ -1,25 +1,30 @@
 <template>
-  <section class="main">
-    <card
-      v-for="item in appList"
-      :key="item.name"
-      :name="item.name"
-      :url="item.url"
-      :isApp="true"
-      :description="item.description"
-      :image="item.image"
-      :isAndroid="item.is_android"
-      :isIos="item.is_ios"
-    />
+  <section>
+    <h2 class="heading">APPS</h2>
+    <article class="card-container">
+      <card
+        v-for="item in appList"
+        :key="item.name"
+        :name="item.name"
+        :url="item.url"
+        :isApp="true"
+        :description="item.description"
+        :image="item.image"
+        :isAndroid="item.is_android"
+        :isIos="item.is_ios"
+      />
+    </article>
     <h2 class="heading">ARTICLES</h2>
-    <card
-      v-for="item in feeds"
-      :key="item.title[0]"
-      :name="item.title[0]"
-      :isApp="false"
-      :url="item.link[0].$.href"
-      :image="item.link[1].$.href"
-    />
+    <article class="card-container">
+      <card
+        v-for="item in feeds"
+        :key="item.title[0]"
+        :name="item.title[0]"
+        :isApp="false"
+        :url="item.link[0].$.href"
+        :image="item.link[1].$.href"
+      />
+    </article>
   </section>
 </template>
 
@@ -55,10 +60,29 @@ export default {
 
 <style lang="scss">
   .heading {
+    margin-top: $spacing-large;
+    display: block;
     font-family: $heading-font-family !important;
     font-weight: normal;
     padding: $spacing-xxx-small 0;
     letter-spacing: $spacing-xxx-small;
     border-bottom: $primary-text-color 1px solid;
+  }
+
+  article {
+    padding: $spacing-small 0;
+
+    &.card-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: $spacing-medium;
+      }
+
+    @media (max-width: 768px) {
+      &.card-container {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: $spacing-x-small;
+      }
+    }
   }
 </style>

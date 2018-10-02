@@ -29,8 +29,8 @@ export default {
     border-radius: 0 0 8px 8px;
 
     &.ease-in {
-      height: 50%;
-      max-height: 50%;
+      height: 40%;
+      max-height: 40%;
       transition: max-height 0.2s ease-in;
     }
 

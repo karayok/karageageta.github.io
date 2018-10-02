@@ -59,8 +59,8 @@ export default {
     border-radius: 0 0 8px 8px;
 
     &.ease-in {
-      height: 50%;
-      max-height: 50%;
+      height: 40%;
+      max-height: 40%;
       transition: max-height 0.2s ease-in;
     }
 
@@ -98,6 +98,7 @@ export default {
     }
 
     .app-type-icons {
+      margin: auto $spacing-xx-small $spacing-xx-small auto;
       position: absolute;
       right: 0;
       bottom: 0;
