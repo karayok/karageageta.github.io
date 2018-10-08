@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "android-image-picker",
+      "description": "Simple image picker for Android.",
+      "url": "https://github.com/KarageAgeta/android-image-picker",
+      "image": "https://github.com/KarageAgeta/android-image-picker/raw/master/docs/arts/002.png",
+      "is_android": true,
+      "is_ios": false,
+      "is_web": false,
+      "is_desktop": false
+    }
+  ]
+}
